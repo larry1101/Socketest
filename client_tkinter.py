@@ -23,6 +23,7 @@ class MyClient():
 
         self.c_text = StringVar()
         self.c_texter = Entry(self.root_window, textvariable=self.c_text)
+        self.c_texter.bind("<Key>", self.on_texter_key)
         self.c_texter.pack()
 
         btn_send = Button(self.root_window, text='Send', command=self.on_click_btn_send)
@@ -82,6 +83,11 @@ class MyClient():
         self.root_window.update()
         self.thread_listen.join()
         self.root_window.destroy()
+
+    def on_texter_key(self, event):
+        if event.keysym == 'Return':
+            # 按下了回车
+            self.on_click_btn_send()
 
 
 MyClient()
