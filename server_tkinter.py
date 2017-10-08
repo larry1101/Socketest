@@ -41,8 +41,8 @@ class MyServer():
         self.root_window.mainloop()
 
     def __ini_socket(self):
-        self.HOST = '127.0.0.1'
-        # self.HOST = '192.168.1.101'
+        # self.HOST = '127.0.0.1'
+        self.HOST = '192.168.1.101'
         self.PORT = 54321
 
         self.server = socket.socket()
@@ -70,6 +70,7 @@ class MyServer():
 
             s = self.s_text.get()
             self.client.send(s.encode('utf-8'))
+            self.s_text.set('')
 
             # c_data = self.client.recv(1024).decode('utf8')
             # self.c_text['text'] = c_data

@@ -39,6 +39,7 @@ class MyClient():
         try:
             c_data = self.c_text.get().encode('utf-8')
             self.client.send(c_data)
+            self.c_text.set('')
 
             # s_data = self.client.recv(1024).decode('utf8')
             # self.s_text['text'] = s_data
