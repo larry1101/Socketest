@@ -70,7 +70,6 @@ class MyClient():
     def __connect(self):
         self.btn_open.destroy()
         self.client.connect((self.HOST, self.PORT))
-        # self.client.send('Hello, I am client'.encode('utf-8'))
         self.s_text['text'] = "Wating for server's reply"
         self.root_window.update()
 
