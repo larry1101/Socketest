@@ -112,6 +112,8 @@ class MyClient:
             self.s_text['text'] = "Server is offline"
 
     def __connect(self):
+        self.HOST = self.ip_text.get()
+        self.PORT = int(self.port_text.get())
         try:
             self.client.connect((self.HOST, self.PORT))
         except ConnectionRefusedError:
